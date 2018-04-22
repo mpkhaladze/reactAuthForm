@@ -38,10 +38,7 @@ const devServer = {
   hot: false,
   noInfo: false,
   open: false,
-  port: 3000,
-  host: '0.0.0.0',
-  useLocalIp: true,
-  port: 3000
+  port: 5000,
 }
 
 module.exports = {
