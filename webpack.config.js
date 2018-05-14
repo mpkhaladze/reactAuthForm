@@ -42,6 +42,10 @@ const devServer = {
 }
 
 module.exports = {
+  entry: [
+    'babel-polyfill',
+    './src/index.js'
+  ],
   module: {
     rules:rules
   },
