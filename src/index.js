@@ -1,8 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from "react"
+import ReactDOM from "react-dom"
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 
-const Index = () => {
-  return <div>Hello React!</div>;
+const App = () => {
+  return <div>Hello world</div>
 };
 
-ReactDOM.render(<Index />, document.getElementById("root"));
+const render = Component => (
+  ReactDOM.render(
+      <Provider>
+        <BrowserRouter>
+          <Component />
+        </BrowserRouter>
+      </Provider>
+    , root)
+)
+
+render(App)
