@@ -1,3 +1,27 @@
 {
-  "presets": ["env", "react"]
+  "plugins": [
+    "ramda",
+    "transform-export-extensions",
+    ["transform-object-rest-spread", { "useBuiltIns": true }],
+    ["transform-class-properties", { "spec": true }]
+  ],
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions"],
+        "uglify": true
+      },
+      "loose": true,
+      "modules": false
+    }],
+    "react"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "react",
+        ["es2015", {"modules": "commonjs"}]
+      ]
+    }
+  }
 }
