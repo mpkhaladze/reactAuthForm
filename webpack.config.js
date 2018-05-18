@@ -39,6 +39,9 @@ const devServer = {
   noInfo: false,
   open: false,
   port: 5000,
+  historyApiFallback: {
+    disableDotRule: true
+  }
 }
 
 module.exports = {
