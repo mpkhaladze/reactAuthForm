@@ -1,5 +1,6 @@
-const App = () => {
-  return <div>Hello world</div>
+import React from 'react'
+
+export const Application = () => {
+  return <div>Something went wrong</div>
 };
 
-export default const App

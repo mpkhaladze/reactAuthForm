@@ -3,10 +3,7 @@ import ReactDOM from "react-dom"
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import store from './store'
-
-const App = () => {
-  return <div>Hello world</div>
-};
+import App from './App'
 
 const render = Component => (
   ReactDOM.render(

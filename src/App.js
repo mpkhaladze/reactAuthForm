@@ -1,11 +1,12 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { authActions } from './modules/Auth'
+import { authActions } from './modules/auth'
 import { bindActionCreators } from 'redux'
 import { history } from './store'
 import { withRouter } from 'react-router-dom'
 import Notifications from 'react-notification-system-redux'
-import { Dashboard } from 'modules/application'
+import { Application } from './modules/application'
 
 class App extends React.Component {
   async componentWillMount () {
@@ -26,9 +27,12 @@ class App extends React.Component {
           (this.props.logged === 'pending' && this.props.history.location.pathname === '/login')
             ? <Loading />
             : <Router history={history} />*/
-            <Switch>
-                <Route exact path='/' component={Dashboard} />
-                <Route exact path='/login' component={Dashboard} />
+          (this.props.loadingStatus && !this.props.history.location.pathname === '/login') ||
+          (this.props.logged === 'pending' && this.props.history.location.pathname === '/login')
+            ? ''
+            :<Switch>
+                <Route exact path='/' component={Application} />
+                <Route exact path='/login' component={Application} />
             </Switch>
         }
       </div>
