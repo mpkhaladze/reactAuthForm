@@ -23,7 +23,7 @@ export default class BaseApi {
 
   async fetchUser () {
     const response = await client.get('users/me')
-    return data = response.data
+    return response.data
   }
 
   // async getTimeZones () {

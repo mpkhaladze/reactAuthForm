@@ -7,6 +7,7 @@ import { history } from './store'
 import { withRouter } from 'react-router-dom'
 import Notifications from 'react-notification-system-redux'
 import { Application } from './modules/application'
+import Login from './modules/login'
 
 class App extends React.Component {
   async componentWillMount () {
@@ -29,11 +30,13 @@ class App extends React.Component {
             : <Router history={history} />*/
           (this.props.loadingStatus && !this.props.history.location.pathname === '/login') ||
           (this.props.logged === 'pending' && this.props.history.location.pathname === '/login')
-            ? ''
-            :<Switch>
-                <Route exact path='/' component={Application} />
-                <Route exact path='/login' component={Application} />
-            </Switch>
+            ? '' /*<Loading />*/
+            :
+                <Switch>
+                  <Route exact path='/' component={Application}/>
+                  <Route exact path='/login' component={Login} />
+                  <Route exact path='/dashboard' component={Application} />
+                </Switch>
         }
       </div>
     )
